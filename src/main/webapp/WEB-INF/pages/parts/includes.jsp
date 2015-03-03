@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="<c:url value='/resources/css/bootstrap.min.css'/>">
 <!-- Optional theme -->
 <link rel="stylesheet" href="<c:url value='/resources/css/bootstrap-theme.min.css'/>">
+<link rel="stylesheet" href="<c:url value='/resources/css/base.css'/>">
 <%--jquery--%>
 <script src="<c:url value='/resources/js/jquery.min.js'/>"></script>
 <!-- Latest compiled and minified JavaScript -->

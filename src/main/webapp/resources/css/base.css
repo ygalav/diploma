@@ -1,3 +1,9 @@
 body{
     background-color: blue;
 }
+.btn {
+    text-align: right;
+}
+.row{
+    text-align:center;
+}

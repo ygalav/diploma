@@ -1,0 +1,17 @@
+body{
+
+}
+.row{
+    padding:30px;
+}
+.newbook{
+    padding:10px;
+    margin: 20px 300px;
+    border-radius: 3px;
+}
+.quotation{
+    font-family:courier ;
+    background-color: #9ABF5F;
+    text-align: center;
+    color:#BC2E2E;
+}

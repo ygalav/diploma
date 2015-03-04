@@ -10,7 +10,9 @@ body{
     border-radius: 3px;
 }
 .quotation{
-    font-family:courier ;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: courier, serif;
     background-color: #9ABF5F;
     text-align: center;
     color:#BC2E2E;

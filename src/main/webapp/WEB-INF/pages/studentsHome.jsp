@@ -5,7 +5,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <jsp:include page="parts/Quotation.jsp"/>
     <jsp:include page="parts/includes.jsp"/>
 
 

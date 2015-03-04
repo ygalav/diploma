@@ -8,7 +8,6 @@
     <jsp:include page="parts/includes.jsp"/>
 </head>
 <body>
-<jsp:include page="parts/Quotation.jsp"/>
 <jsp:include page="parts/navbar.jsp"/>
 
 <div class="container">

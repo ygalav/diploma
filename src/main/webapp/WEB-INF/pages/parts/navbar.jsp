@@ -3,7 +3,9 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@page contentType="text/html;charset=UTF-8" %>
-
+<div class="quotation">
+    <span>Справжній університет нашого часу - це збірка книг. Т. Карлайл</span>
+</div>
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->

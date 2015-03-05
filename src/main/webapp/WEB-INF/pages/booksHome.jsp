@@ -51,21 +51,38 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                <h4 class="modal-title" id="myModalLabel">Додати книгу </h4>
             </div>
             <div class="modal-body">
-                <div class="row form-group">
+                <div class="row form-group book-name">
                     <div class="col-md-4">
-                        <label for="book-name">Name</label>
+                        <label for="book-name">Назва</label>
                     </div>
                     <div class="col-md-8">
                         <input id="book-name" name="name" class="form-control"/>
                     </div>
                 </div>
+
+            </div>
+            <div class="row form-group book-author">
+                <div class="col-md-4">
+                    <label for="book-author">Автор</label>
+                </div>
+                <div class="col-md-8">
+                    <input id="book-author" name="author" class="form-control"/>
+                </div>
+            </div>
+            <div class="row form-group book-code">
+                <div class="col-md-4">
+                    <label for="book-code">Код</label>
+                </div>
+                <div class="col-md-8">
+                    <input id="book-code" name="code" class="form-control"/>
+                </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Відмінити</button>
+                <button type="button" class="btn btn-primary">Зберегти книгу</button>
             </div>
         </div>
     </div>

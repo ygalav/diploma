@@ -15,8 +15,16 @@ public class StudentController {
     public String showStudentsHomePage(Model a2){
         Student student1 = new Student();
         student1.setId(4);
+        student1.setSurname("Іванів");
+        student1.setName("Роксолана");
+        student1.setEmail("roksoliana@gmail.com");
+        student1.setPhone("0669877845");
         Student student2 = new Student();
-        student1.setId(4);
+        student2.setId(4);
+        student2.setSurname("Онищук");
+        student2.setName("Василь");
+        student2.setEmail("vasyl24@gmail.com");
+        student2.setPhone("0953451234");
         ArrayList studList= new ArrayList();
         studList.add(student1);
         studList.add(student2);

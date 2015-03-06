@@ -12,6 +12,7 @@
 </head>
 <body>
     <jsp:include page="parts/navbar.jsp"/>
+<div class="container">
     <div class="row">
         <div class="col-md-2 col-md-offset-5">
             <button type="button" class="btn btn-primary stud" data-toggle="modal" data-target=".bs-example-modal-lg">
@@ -23,16 +24,24 @@
     <table class="table table-bordered">
         <thead>
         <tr>
-            <th>Властивість</th>
-            <th>Значення</th>
+            <th>Номер</th>
+            <th>Прізвище</th>
+            <th>Ім'я</th>
+            <th>Група</th>
+            <th>Email</th>
+            <th>Номер телефону</th>
             <th>Дії</th>
         </tr>
         </thead>
         <tbody>
-        <c:forEach items="${students3}" var="property">
+        <c:forEach items="${student3}" var="property">
             <tr>
-                <td>${property.name}</td>
                 <td>${property.id}</td>
+                <td>${property.surname}</td>
+                <td>${property.name}</td>
+                <td>${property.group}</td>
+                <td>${property.email}</td>
+                <td>${property.phone}</td>
                 <td><span class="btn btn-danger disabled">Видалити</span></td>
             </tr>
         </c:forEach>
@@ -98,7 +107,7 @@
             </div>
         </div>
 
-
+    </div>
         </div>
 </body>
 </html>

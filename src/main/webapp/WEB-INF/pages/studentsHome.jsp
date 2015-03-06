@@ -20,6 +20,24 @@
 
         </div>
     </div>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Властивість</th>
+            <th>Значення</th>
+            <th>Дії</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach items="${students3}" var="property">
+            <tr>
+                <td>${property.name}</td>
+                <td>${property.id}</td>
+                <td><span class="btn btn-danger disabled">Видалити</span></td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
 
     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
          aria-hidden="true">
@@ -79,6 +97,8 @@
                 </div>
             </div>
         </div>
-    </div>
+
+
+        </div>
 </body>
 </html>

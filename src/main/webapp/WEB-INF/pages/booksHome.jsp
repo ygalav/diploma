@@ -26,11 +26,37 @@
         </div>
         <!-- /.col-lg-6 -->
     </div>
+
     <div class="row">
         <div class="col-md-2 col-md-offset-5">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Додати книгу</button>
         </div>
     </div>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Номер</th>
+            <th>Назва</th>
+            <th>Автор</th>
+            <th>Код</th>
+            <th>Дії</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach items="${spysokBook}" var="property">
+            <tr>
+                <td>${property.id}</td>
+                <td>${property.name}</td>
+                <td>${property.author}</td>
+                <td>${property.code}</td>
+                <td><span class="btn btn-danger disabled">Видалити</span></td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+
+
     <div class="row">
         <div class="list-group col-md-8 col-md-offset-2">
             <a href="#" class="list-group-item disabled">

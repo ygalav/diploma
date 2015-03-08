@@ -21,6 +21,7 @@
 
         </div>
     </div>
+    <div class="studTable">
     <table class="table table-bordered">
         <thead>
         <tr>
@@ -47,6 +48,9 @@
         </c:forEach>
         </tbody>
     </table>
+ </div>
+
+
 
     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
          aria-hidden="true">

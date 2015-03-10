@@ -55,6 +55,7 @@
     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
          aria-hidden="true">
         <div class="modal-dialog modal-lg">
+            <form:form commandName="studentDto" action="" method="post">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
@@ -67,47 +68,48 @@
                             <label for="stud-name">Ім'я</label>
                         </div>
                         <div class="col-md-8">
-                            <input id="stud-name" name="name" class="form-control"/>
+                            <form:input path="name" id="stud-name" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="row form-group stud-surname">
+                        <div class="col-md-4">
+                            <label for="stud-surname">Прізвище</label>
+                        </div>
+                        <div class="col-md-8">
+                            <form:input id="stud-surname" path="surname" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="row form-group stud-group">
+                        <div class="col-md-4">
+                            <label for="stud-group">Група</label>
+                        </div>
+                        <div class="col-md-8">
+                            <form:input id="stud-group" path="studentGroupName" class="form-control" disabled="true"/>
+                        </div>
+                    </div>
+                    <div class="row form-group stud-email">
+                        <div class="col-md-4">
+                            <label for="stud-email">Email</label>
+                        </div>
+                        <div class="col-md-8">
+                            <form:input id="stud-email" path="email" class="form-control"/>
+                        </div>
+                    </div>
+
+                    <div class="row form-group stud-phone">
+                        <div class="col-md-4">
+                            <label for="stud-phone">Номер телефону</label>
+                        </div>
+                        <div class="col-md-8">
+                            <form:input id="stud-phone" path="phone" class="form-control"/>
                         </div>
                     </div>
                 </div>
-                <div class="row form-group stud-surname">
-                    <div class="col-md-4">
-                        <label for="stud-surname">Прізвище</label>
-                    </div>
-                    <div class="col-md-8">
-                        <input id="stud-surname" name="surname" class="form-control"/>
-                    </div>
-                </div>
-                <div class="row form-group stud-group">
-                    <div class="col-md-4">
-                        <label for="stud-group">Група</label>
-                    </div>
-                    <div class="col-md-8">
-                        <input id="stud-group" name="group" class="form-control"/>
-                    </div>
-                </div>
-                <div class="row form-group stud-email">
-                     <div class="col-md-4">
-                          <label for="stud-email">Email</label>
-                     </div>
-                     <div class="col-md-8">
-                          <input id="stud-email" name="email" class="form-control"/>
-                     </div>
-                </div>
-
-                <div class="row form-group stud-phone">
-                      <div class="col-md-4">
-                            <label for="stud-phone">Номер телефону</label>
-                      </div>
-                      <div class="col-md-8">
-                            <input id="stud-phone" name="phone" class="form-control"/>
-                      </div>
-                </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Відмінити</button>
-                    <button type="button" class="btn btn-primary">Зберегти студента</button>
+                    <button type="submit" class="btn btn-primary">Зберегти студента</button>
                 </div>
+                </form:form>
             </div>
         </div>
 

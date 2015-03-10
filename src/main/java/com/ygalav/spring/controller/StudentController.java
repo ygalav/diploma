@@ -9,7 +9,9 @@ import com.ygalav.spring.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping(value = "/students")
@@ -19,25 +21,15 @@ public class StudentController {
 
     @RequestMapping("/")
     public String showStudentsHomePage(Model a2){
-        StudentDto student1 = new StudentDtoBuilder()
-            .setName("Роксолана")
-            .setSurname("Іванів")
-            .setEmail("roksoliana@gmail.com")
-            .setPhone("0669877845")
-            .createStudentDto();
-        
-        StudentDto student2 = new StudentDtoBuilder()
-            .setSurname("Онищук")
-            .setName("Василь")
-            .setEmail("vasyl24@gmail.com")
-            .setPhone("0953451234").createStudentDto();
-
-        studentFacade.save(student1);
-        studentFacade.save(student2);
-        
-
+        a2.addAttribute("studentDto", new StudentDto());
         a2.addAttribute("student3", studentFacade.findAll());
 
        return "studentsHome";
+    }
+
+    @RequestMapping(value = "/", method = RequestMethod.POST)
+    public String save(@ModelAttribute StudentDto studentDto){
+        studentFacade.save(studentDto);
+        return "redirect:/students/";
     }
 }

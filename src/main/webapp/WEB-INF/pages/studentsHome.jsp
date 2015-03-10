@@ -40,7 +40,7 @@
                 <td>${property.id}</td>
                 <td>${property.surname}</td>
                 <td>${property.name}</td>
-                <td>${property.group}</td>
+                <td>${property.studentGroupName}</td>
                 <td>${property.email}</td>
                 <td>${property.phone}</td>
                 <td><span class="btn btn-danger disabled">Видалити</span></td>

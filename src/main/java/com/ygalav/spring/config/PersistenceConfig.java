@@ -1,4 +1,6 @@
 package com.ygalav.spring.config;
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,28 +18,39 @@ import java.util.Properties;
 
 @Configuration
 @EnableJpaRepositories(basePackages = {
-        PersistenceConfig.JPA_PACKAGE
+        "com.ygalav.spring.repository"
 })
 @EnableTransactionManagement
 @PropertySource("classpath:data.properties")
 class PersistenceConfig {
     
-    static final String JPA_PACKAGE = "com.ygalav.spring.repository" ;
+    static final String JPA_PACKAGE = "com.ygalav.spring.entity" ;
 
-    @Bean(destroyMethod = "close")
+    /*@Bean(destroyMethod = "close")
     DataSource dataSource(Environment env) {
         BasicDataSource dataSource = new BasicDataSource();
         dataSource.setDriverClassName(env.getRequiredProperty("db.driver"));
         dataSource.setUrl(env.getRequiredProperty("db.url"));
         dataSource.setUsername(env.getRequiredProperty("db.username"));
         dataSource.setPassword(env.getRequiredProperty("db.password"));
-        
+
         dataSource.setMaxWait(40000);
         dataSource.setMaxActive(80);
         dataSource.setMaxIdle(20);
         return dataSource;
     }
+*/
+    @Bean(destroyMethod = "close")
+    DataSource dataSource(Environment env) {
+        HikariConfig dataSourceConfig = new HikariConfig();
+        dataSourceConfig.setDriverClassName(env.getRequiredProperty("db.driver"));
+        dataSourceConfig.setJdbcUrl(env.getRequiredProperty("db.url"));
+        dataSourceConfig.setUsername(env.getRequiredProperty("db.username"));
+        dataSourceConfig.setPassword(env.getRequiredProperty("db.password"));
 
+        return new HikariDataSource(dataSourceConfig);
+    }
+    
     @Bean
     LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource,
                                                                 Environment env) {

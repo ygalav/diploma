@@ -1,7 +1,12 @@
 package com.ygalav.spring.entity;
 
-public class Group {
+import javax.persistence.*;
 
+@Entity
+@Table(name = "st_group")
+public class Group {
+    @Id
+    @GeneratedValue
     private Integer id;
 
     private String name;

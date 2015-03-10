@@ -1,22 +1,24 @@
-package com.ygalav.spring.entity;
+package com.ygalav.spring.dto;
 
-import javax.persistence.*;
-
-@Entity
-public class Student {
-    @Id
-    @GeneratedValue
+public class StudentDto {
     private Integer id;
-
     private String name;
-
     private String surname;
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Group studentGroup;
-
+    private String studentGroupName;
     private String email;
-
     private String phone;
+
+    public StudentDto(Integer id, String name, String surname, String studentGroupName, String email, String phone) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.studentGroupName = studentGroupName;
+        this.email = email;
+        this.phone = phone;
+    }
+
+    public StudentDto() {
+    }
 
     public Integer getId() {
         return id;
@@ -42,12 +44,12 @@ public class Student {
         this.surname = surname;
     }
 
-    public Group getStudentGroup() {
-        return studentGroup;
+    public String getStudentGroupName() {
+        return studentGroupName;
     }
 
-    public void setStudentGroup(Group studentGroup) {
-        this.studentGroup = studentGroup;
+    public void setStudentGroupName(String studentGroupName) {
+        this.studentGroupName = studentGroupName;
     }
 
     public String getEmail() {
@@ -66,8 +68,3 @@ public class Student {
         this.phone = phone;
     }
 }
-
-
-
-
-

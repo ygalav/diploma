@@ -22,7 +22,7 @@ public class StudentController {
     @RequestMapping("/")
     public String showStudentsHomePage(Model a2){
         a2.addAttribute("studentDto", new StudentDto());
-        a2.addAttribute("student3", studentFacade.findAll());
+        a2.addAttribute("students", studentFacade.findAll());
 
        return "studentsHome";
     }

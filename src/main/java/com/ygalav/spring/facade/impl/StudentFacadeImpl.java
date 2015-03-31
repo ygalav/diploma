@@ -23,9 +23,8 @@ public class StudentFacadeImpl implements StudentFacade {
 
     @Override
     public StudentDto save(StudentDto studentDto) {
-        Student student = studentService.save(
-                fromDto(studentDto)
-        );
+        Student student = fromDto(studentDto);
+        student = studentService.save(student);
         studentDto.setId(student.getId());
         return studentDto;
     }

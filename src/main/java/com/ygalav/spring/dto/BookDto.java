@@ -1,20 +1,22 @@
-package com.ygalav.spring.entity;
+package com.ygalav.spring.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 
-@Entity
-public class Book {
-    @Id
-    @GeneratedValue
+public class BookDto {
+
     private Integer id;
-
     private String name;
-
     private String author;
-
     private String code;
+
+    public BookDto(Integer id, String name, String author, String code) {
+        this.id = id;
+        this.name = name;
+        this.author = author;
+        this.code = code;
+    }
+
+    public BookDto() {
+    }
 
     public Integer getId() {
         return id;
@@ -36,9 +38,7 @@ public class Book {
         return author;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
+    public void setAuthor(String author) {this.author = author;}
 
     public String getCode() {
         return code;
@@ -47,4 +47,8 @@ public class Book {
     public void setCode(String code) {
         this.code = code;
     }
+
+
 }
+
+

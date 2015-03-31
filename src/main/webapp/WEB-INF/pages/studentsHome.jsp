@@ -35,7 +35,7 @@
         </tr>
         </thead>
         <tbody>
-        <c:forEach items="${student3}" var="property">
+        <c:forEach items="${students}" var="property">
             <tr>
                 <td>${property.id}</td>
                 <td>${property.surname}</td>

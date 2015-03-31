@@ -23,6 +23,8 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="<c:url value='/books/'/>">Книги <span class="sr-only">(current)</span></a></li>
+                <li><a href="<c:url value='/groups/'/>">Групи</a></li>
+
                 <li><a href="<c:url value='/students/'/>">Студенти</a></li>
                 <li><a href="#">Адміністратори</a></li>
                 <li class="dropdown">

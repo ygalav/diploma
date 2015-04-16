@@ -31,7 +31,7 @@
         </tr>
         </thead>
         <tbody>
-        <c:forEach items="${spysokGroup}" var="property">
+        <c:forEach items="${groups}" var="property">
             <tr>
                 <td>${property.id}</td>
                 <td>${property.name}</td>
@@ -45,6 +45,8 @@
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
      aria-hidden="true">
     <div class="modal-dialog modal-lg">
+        <form:form commandName="groupDto" action="" method="post">
+
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
@@ -57,7 +59,7 @@
                         <label for="group-name">Назва</label>
                     </div>
                     <div class="col-md-8">
-                        <input id="group-name" name="name" class="form-control"/>
+                        <form:input id="group-name" path="name" class="form-control"/>
                     </div>
                 </div>
 
@@ -67,8 +69,9 @@
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Відмінити</button>
-                <button type="button" class="btn btn-primary">Зберегти групу</button>
+                <button type="submit" class="btn btn-primary">Зберегти групу</button>
             </div>
+            </form:form>>
         </div>
     </div>
 </div>

@@ -10,4 +10,6 @@ public interface StudentService {
     Student save(Student student);
     
     List<Student> findAll();
+
+    Student findOne(Integer id);
 }

@@ -34,8 +34,8 @@ public class BookFacadeImpl implements BookFacade{
         return toDto(book);
     }
 
-
-    private BookDto toDto(Book book){
+@Override
+    public BookDto toDto(Book book){
         return new BookDtoBuilder()
                 .setId(book.getId())
                 .setName(book.getName())
@@ -43,8 +43,8 @@ public class BookFacadeImpl implements BookFacade{
                 .setCode(book.getCode())
                 .createBookDto();
     }
-
-    private Book fromDto(BookDto book){
+@Override
+    public Book fromDto(BookDto book){
         return new BookBuilder()
                 .setId(book.getId())
                 .setName(book.getName())

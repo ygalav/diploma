@@ -18,6 +18,8 @@ public class BookServiceImpl implements BookService {
     public List<Book> findAll(){
         return bookRepository.findAll();
     }
+    @Override
+    public Book findOne(Integer id){return bookRepository.findOne(id);}
 
     @Override
     public Book save(Book book) {

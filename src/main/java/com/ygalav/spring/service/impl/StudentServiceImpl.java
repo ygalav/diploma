@@ -1,5 +1,6 @@
 package com.ygalav.spring.service.impl;
 
+import com.ygalav.spring.entity.Book;
 import com.ygalav.spring.entity.Student;
 import com.ygalav.spring.repository.StudentRepository;
 import com.ygalav.spring.service.StudentService;
@@ -24,7 +25,8 @@ public class StudentServiceImpl implements StudentService {
     public List<Student> findAll() {
         return studentRepository.findAll();
     }
-
+    @Override
+public Student findOne(Integer id){return studentRepository.findOne(id);}
     public void setStudentRepository(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
     }

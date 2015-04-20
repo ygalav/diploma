@@ -34,8 +34,8 @@ public class StudentFacadeImpl implements StudentFacade {
         return studentService.findAll().stream().map(this::toDto).collect(Collectors.toList());
     }
     
-    
-    private Student fromDto(StudentDto studentDto){
+    @Override
+    public Student fromDto(StudentDto studentDto){
         String groupName = studentDto.getStudentGroupName();
         Group group = null;
         if (groupName!=null && groupName.length() > 0){
@@ -49,8 +49,8 @@ public class StudentFacadeImpl implements StudentFacade {
         student.setStudentGroup(group);
         return student;
     }
-    
-    private StudentDto toDto(Student student){
+    @Override
+    public StudentDto toDto(Student student){
         StudentDto dto = new StudentDtoBuilder().createStudentDto();
         dto.setId(student.getId());
         dto.setName(student.getName());

@@ -17,12 +17,12 @@ public class RegistrationDtoBuilder {
     }
 
 
-    public RegistrationDtoBuilder setBook(Book book) {
+    public RegistrationDtoBuilder setBook(BookDto book) {
         this.book = book;
         return this;
     }
 
-    public RegistrationDtoBuilder setStudent(Student student) {
+    public RegistrationDtoBuilder setStudent(StudentDto student) {
         this.student = student;
         return this;
     }

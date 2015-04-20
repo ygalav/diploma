@@ -26,6 +26,8 @@
                 <li><a href="<c:url value='/groups/'/>">Групи</a></li>
 
                 <li><a href="<c:url value='/students/'/>">Студенти</a></li>
+                <li><a href="<c:url value='/registrations/'/>">Реєстрація</a></li>
+
                 <li><a href="#">Адміністратори</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>

@@ -20,12 +20,12 @@ public class RegistrationBuilder {
         return this;
     }
 
-    public RegistrationBuilder setBook(BookDto book) {
+    public RegistrationBuilder setBook(Book book) {
         this.book = book;
         return this;
     }
 
-    public RegistrationBuilder setStudent(StudentDto student) {
+    public RegistrationBuilder setStudent(Student student) {
         this.student = student;
         return this;
     }

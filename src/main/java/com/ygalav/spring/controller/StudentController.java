@@ -4,6 +4,7 @@ import com.ygalav.spring.dto.StudentDto;
 import com.ygalav.spring.entity.Student;
 import com.ygalav.spring.entity.builder.StudentBuilder;
 import com.ygalav.spring.entity.builder.StudentDtoBuilder;
+import com.ygalav.spring.facade.GroupFacade;
 import com.ygalav.spring.facade.StudentFacade;
 import com.ygalav.spring.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,11 +19,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class StudentController {
     @Autowired
     private StudentFacade studentFacade;
+    @Autowired
+    private GroupFacade groupFacade;
 
     @RequestMapping("/")
     public String showStudentsHomePage(Model a2){
         a2.addAttribute("studentDto", new StudentDto());
         a2.addAttribute("students", studentFacade.findAll());
+        a2.addAttribute("groups",groupFacade.findAll());
+
 
        return "studentsHome";
     }

@@ -81,10 +81,16 @@
                     </div>
                     <div class="row form-group stud-group">
                         <div class="col-md-4">
-                            <label for="stud-group">Група</label>
+                            <label for="group">Група</label>
                         </div>
                         <div class="col-md-8">
-                            <form:input id="stud-group" path="studentGroupName" class="form-control" disabled="true"/>
+                            <form:select id="group" path="studentGroupName" class="form-control">
+
+                                <c:forEach items="${groups}" var="group">
+                                    <form:option value="${group.name}" label="${group.name}"/>
+                                </c:forEach>
+
+                            </form:select>
                         </div>
                     </div>
                     <div class="row form-group stud-email">

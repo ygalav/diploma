@@ -60,6 +60,8 @@
                     </div>
                     <div class="col-md-8">
                         <form:input id="group-name" path="name" class="form-control"/>
+
+
                     </div>
                 </div>
 

@@ -11,7 +11,7 @@ public class Student {
     private String name;
 
     private String surname;
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     private Group studentGroup;
 
     private String email;

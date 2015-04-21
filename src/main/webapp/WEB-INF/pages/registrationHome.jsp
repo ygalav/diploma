@@ -69,10 +69,12 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach items="${registrations}" var="property">
+            <c:forEach items="${registrations}" var="registration">
                 <tr>
-                    <td>${property.id}</td>
-                    <td>${property.name}</td>
+                    <td>${registration.id}</td>
+                    <td>${registration.book.name}</td>
+                    <td>${registration.student.name}</td>
+
                 </tr>
             </c:forEach>
             </tbody>

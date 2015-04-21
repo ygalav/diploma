@@ -13,6 +13,8 @@ public class RegistrationDto {
 
     public RegistrationDto(Integer id, BookDto book, StudentDto student) {
         this.id = id;
+        this.book=book;
+        this.student=student;
     }
 
     public RegistrationDto(BookDto book) {

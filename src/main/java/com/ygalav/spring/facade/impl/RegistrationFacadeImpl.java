@@ -47,6 +47,7 @@ private BookFacade bookFacade;
 
     @Override
     public RegistrationDto save(RegistrationDto registrationDto) {
+
         Registration registration = registrationService.save(fromDto(registrationDto));
         return toDto(registration);
     }

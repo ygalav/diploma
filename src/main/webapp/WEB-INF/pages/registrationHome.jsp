@@ -34,16 +34,49 @@
         <div class="modal-body">
             <div class="row form-group stud-name">
                 <div class="col-md-4">
-                    <label for="stud-name">Прізвище студента</label>
+                    <label for="student">Прізвище студента</label>
                 </div>
                 <div class="col-md-8">
 
-                    <input id="stud-name" name="surname" class="form-control"/>
+                    <form:select id="student" path="student.id" class="form-control">
+                    <c:forEach items="${students}" var="student">
+                        <form:option value="${student.id}" label="${student.surname}  ${student.name}"/>
+
+                    </c:forEach>
+                    </form:select>
+
                 </div>
-            </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Зберегти реєстрацію</button>
+                </div>
 
 </form:form>
 
+
+
+
+    </div>
+    <div class="groupTable">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Номер</th>
+                <th>Книга</th>
+                <th>Студент</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${registrations}" var="property">
+                <tr>
+                    <td>${property.id}</td>
+                    <td>${property.name}</td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
     </div>
 
 

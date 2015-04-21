@@ -9,9 +9,9 @@ public class Registration {
     private Integer id;
     private Date releaseDate;
     private Date returnDate;
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     private Book book;
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     private Student student;
 
     public Integer getId() {

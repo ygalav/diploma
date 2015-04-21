@@ -6,6 +6,7 @@ import com.ygalav.spring.service.RegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 @Service
 public class RegistrationServiceImpl implements RegistrationService {
@@ -18,6 +19,7 @@ private RegistrationRepository registrationRepository;
     }
 
     @Override
+    @Transactional
     public Registration save(Registration registration) {
         return registrationRepository.save(registration);
     }

@@ -40,7 +40,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
         @RequestMapping(value = "/", method = RequestMethod.POST)
         public String save(@ModelAttribute RegistrationDto registrationDto){
             registrationFacade.save(registrationDto);
-            return "redirect:/registration/";
+            return "redirect:/registrations/";
         }
     }
 

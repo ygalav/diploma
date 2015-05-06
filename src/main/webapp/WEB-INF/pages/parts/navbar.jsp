@@ -27,6 +27,8 @@
 
                 <li><a href="<c:url value='/students/'/>">Студенти</a></li>
                 <li><a href="<c:url value='/registrations/'/>">Реєстрація</a></li>
+                <li><a href="<c:url value='/searchRegistration/'/>">Пошук реєстрації</a></li>
+
 
                 <li><a href="#">Адміністратори</a></li>
                 <li class="dropdown">

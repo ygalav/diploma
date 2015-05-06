@@ -1,11 +1,5 @@
 package com.ygalav.spring.dto;
 
-import com.ygalav.spring.entity.Book;
-import com.ygalav.spring.entity.Registration;
-import com.ygalav.spring.entity.Student;
-
-import java.util.Date;
-
 public class RegistrationDto {
     private Integer id;
     private BookDto book;
@@ -15,14 +9,6 @@ public class RegistrationDto {
         this.id = id;
         this.book=book;
         this.student=student;
-    }
-
-    public RegistrationDto(BookDto book) {
-        this.book = book;
-    }
-
-    public RegistrationDto(StudentDto student) {
-        this.student = student;
     }
 
     public RegistrationDto() {

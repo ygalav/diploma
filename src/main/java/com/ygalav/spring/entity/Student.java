@@ -1,9 +1,10 @@
 package com.ygalav.spring.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class Student {
+public class Student implements Serializable {
     @Id
     @GeneratedValue
     private Integer id;

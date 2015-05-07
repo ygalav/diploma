@@ -16,33 +16,29 @@
     <div class="row">
         <div class="col-md-12">
             <form:form commandName="registrationDto" action="search">
-
-            <div class="row">
-                <div class="col-md-4">
-                    <form:label path="student.name">Name</form:label>
+                <div class="col-md-1">
+                    <form:label path="group.name">Група</form:label>
                 </div>
-                <div class="col-md-8">
-                    <form:input path="student.name" type="text"/>
+                <div class="col-md-2">
+                    <form:input path="group.name" type="text" class="form-control"/>
                 </div>
+            <div class="col-md-1">
+                <form:label path="student.surname">Прізвище</form:label>
             </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <form:label path="student.surname">Surname</form:label>
-                </div>
-                <div class="col-md-8">
-                    <form:input path="student.surname" type="text"/>
-                </div>
+            <div class="col-md-2">
+                <form:input path="student.surname" type="text" class="form-control"/>
             </div>
-        </div>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <button type="submit" class="btn btn-primary">Search</button>
-                </div>
+            <div class="col-md-1">
+                <form:label path="student.name">Ім'я</form:label>
             </div>
-
+            <div class="col-md-2">
+                <form:input path="student.name" type="text" class="form-control"/>
+            </div>
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-primary">Пошук</button>
+            </div>
             </form:form>
-        </div>
+         </div>
     </div>
 
     <div class="row">
@@ -60,6 +56,7 @@
             <tr>
                 <th>Книга</th>
                 <th>Студент</th>
+                <th>Група</th>
 
             </tr>
             </thead>
@@ -68,12 +65,14 @@
                 <tr>
                     <td>${registration.book.name}</td>
                     <td>${registration.student.surname} ${registration.student.name} - ${registration.student.studentGroupName}</td>
+                    <td>${registration.group.name}</td>
+
                 </tr>
             </c:forEach>
             </tbody>
         </table>
     </div>
-
+</div>
     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
          aria-hidden="true">
         <div class="modal-dialog modal-lg">

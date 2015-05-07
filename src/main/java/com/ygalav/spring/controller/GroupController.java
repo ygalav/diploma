@@ -30,7 +30,7 @@ public class GroupController {
         @RequestMapping(value = "/",method = RequestMethod.POST)
         public String save(@ModelAttribute GroupDto groupDto) {
             groupFacade.save(groupDto);
-            return "redirect:/books/";
+            return "redirect:/groups/";
 
         }
 }

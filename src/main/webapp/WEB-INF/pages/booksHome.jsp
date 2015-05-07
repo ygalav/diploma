@@ -14,6 +14,7 @@
 
 <div class="container">
 
+
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="input-group">
@@ -71,7 +72,6 @@
                         aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">Додати книгу </h4>
             </div>
-            <div class="modal-body">
                 <div class="row form-group book-name">
                     <div class="col-md-4">
                         <label for="book-name">Назва</label>
@@ -82,7 +82,6 @@
                     </div>
                 </div>
 
-            </div>
             <div class="row form-group book-author">
                 <div class="col-md-4">
                     <label for="book-author">Автор</label>

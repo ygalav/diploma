@@ -75,6 +75,17 @@ import java.util.stream.Stream;
                     }
                 });
             }
+            if (registrationDto.getStudent().getStudentGroupName() != null && ! "".equals(registrationDto.getStudent().getStudentGroupName())){
+                registrationDtoStream = registrationDtoStream.filter(new Predicate<RegistrationDto>() {
+                    @Override
+                    public boolean test(RegistrationDto dto) {
+                        if(dto.getStudent().getStudentGroupName()==null){
+                            return false;
+                        }
+                        return dto.getStudent().getStudentGroupName().contains(registrationDto.getStudent().getStudentGroupName());
+                    }
+                });
+            }
 
             if (registrationDto.getStudent().getSurname() != null && ! "".equals(registrationDto.getStudent().getSurname())){
                 registrationDtoStream = registrationDtoStream.filter(new Predicate<RegistrationDto>() {

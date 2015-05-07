@@ -17,10 +17,10 @@
         <div class="col-md-12">
             <form:form commandName="registrationDto" action="search">
                 <div class="col-md-1">
-                    <form:label path="group.name">Група</form:label>
+                    <form:label path="student.studentGroupName">Група</form:label>
                 </div>
                 <div class="col-md-2">
-                    <form:input path="group.name" type="text" class="form-control"/>
+                    <form:input path="student.studentGroupName" type="text" class="form-control"/>
                 </div>
             <div class="col-md-1">
                 <form:label path="student.surname">Прізвище</form:label>
@@ -64,8 +64,8 @@
             <c:forEach items="${registrations}" var="registration">
                 <tr>
                     <td>${registration.book.name}</td>
-                    <td>${registration.student.surname} ${registration.student.name} - ${registration.student.studentGroupName}</td>
-                    <td>${registration.group.name}</td>
+                    <td>${registration.student.surname} ${registration.student.name}</td>
+                    <td>${registration.student.studentGroupName}</td>
 
                 </tr>
             </c:forEach>

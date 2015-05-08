@@ -20,7 +20,11 @@
                     <form:label path="student.studentGroupName">Група</form:label>
                 </div>
                 <div class="col-md-2">
-                    <form:input path="student.studentGroupName" type="text" class="form-control"/>
+                    <form:select id="student" path="student.studentGroupName" class="form-control">
+                    <c:forEach items="${students}" var="student">
+                        <form:option value="${student.studentGroupName}" label="${student.studentGroupName}"/>
+                    </c:forEach>
+                    </form:select>
                 </div>
             <div class="col-md-1">
                 <form:label path="student.surname">Прізвище</form:label>
@@ -57,7 +61,6 @@
                 <th>Книга</th>
                 <th>Студент</th>
                 <th>Група</th>
-
             </tr>
             </thead>
             <tbody>
@@ -66,7 +69,6 @@
                     <td>${registration.book.name}</td>
                     <td>${registration.student.surname} ${registration.student.name}</td>
                     <td>${registration.student.studentGroupName}</td>
-
                 </tr>
             </c:forEach>
             </tbody>
@@ -86,18 +88,16 @@
                     </div>
 
                     <div class="modal-body">
-                        <div class="row form-group book-name">
+                        <div class="row form-group group-name">
                             <div class="col-md-4">
-                                <label for="book">Назва книги</label>
+                                <label for="student">Група</label>
                             </div>
                             <div class="col-md-8">
 
-                                <form:select id="book" path="book.id" class="form-control">
-
-                                    <c:forEach items="${books}" var="book">
-                                        <form:option value="${book.id}" label="${book.name}"/>
+                                <form:select id="student" path="student.studentGroupName" class="form-control">
+                                    <c:forEach items="${students}" var="student">
+                                        <form:option value="${student.studentGroupName}" label="${student.studentGroupName}"/>
                                     </c:forEach>
-
                                 </form:select>
                             </div>
                         </div>
@@ -118,7 +118,33 @@
 
                             </div>
                         </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row form-group book-name">
+                            <div class="col-md-4">
+                                <label for="book">Назва книги</label>
+                            </div>
+                            <div class="col-md-8">
 
+                                <form:select id="book" path="book.id" class="form-control">
+
+                                    <c:forEach items="${books}" var="book">
+                                        <form:option value="${book.id}" label="${book.name}"/>
+                                    </c:forEach>
+                                </form:select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row form-group book-code">
+                            <div class="col-md-4">
+                                <label for="book">Код книги</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input id="code" name="code" class="form-control">
+                                </input>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="modal-body">
@@ -129,9 +155,7 @@
                             <div class="col-md-8">
                                 <input id="releaseDay" name="releaseDay" value="${releaseDay}" class="form-control">
 
-
                                 </input>
-
                             </div>
                         </div>
                     </div>

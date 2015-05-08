@@ -5,6 +5,7 @@ import com.ygalav.spring.dto.RegistrationDto;
 import com.ygalav.spring.dto.StudentDto;
 import com.ygalav.spring.entity.Registration;
 import com.ygalav.spring.facade.BookFacade;
+import com.ygalav.spring.facade.GroupFacade;
 import com.ygalav.spring.facade.RegistrationFacade;
 import com.ygalav.spring.facade.StudentFacade;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,7 @@ import java.util.stream.Stream;
         @Autowired
         private BookFacade bookFacade;
 
+
         @RequestMapping("/")
         public String showStudentsHomePage(Model model){
             RegistrationDto registrationDto=new RegistrationDto();
@@ -39,6 +41,7 @@ import java.util.stream.Stream;
             model.addAttribute("registrations", registrationFacade.findAll());
             model.addAttribute("students",studentFacade.findAll());
             model.addAttribute("books",bookFacade.findAll());
+
 
             return "registrationHome";
         }

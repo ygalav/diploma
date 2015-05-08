@@ -13,7 +13,27 @@
 
 
 <div class="container">
-
+    <div class="row">
+        <div class="col-md-12 col-md-offset-2">
+            <form:form commandName="bookDto" action="search">
+                <div class="col-md-1">
+                    <form:label path="author">Автор</form:label>
+                </div>
+                <div class="col-md-2">
+                    <form:input path="author" type="text" class="form-control"/>
+                </div>
+                <div class="col-md-1">
+                    <form:label path="name">Назва</form:label>
+                </div>
+                <div class="col-md-2">
+                    <form:input path="name" type="text" class="form-control"/>
+                </div>
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-primary">Пошук</button>
+                </div>
+            </form:form>
+    </div>
+</div>
 
     <div class="row">
         <div class="col-md-8 col-md-offset-2">

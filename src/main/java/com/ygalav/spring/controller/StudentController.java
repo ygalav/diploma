@@ -1,5 +1,6 @@
 package com.ygalav.spring.controller;
 
+import com.ygalav.spring.dto.BookDto;
 import com.ygalav.spring.dto.RegistrationDto;
 import com.ygalav.spring.dto.StudentDto;
 import com.ygalav.spring.entity.Student;
@@ -18,6 +19,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Controller
 @RequestMapping(value = "/students")
@@ -25,25 +29,60 @@ public class StudentController {
     @Autowired
     private StudentFacade studentFacade;
     @Autowired
-    private GroupFacade groupFacade;
-    @Autowired
     private RegistrationFacade registrationFacade;
 
     @RequestMapping("/")
-    public String showStudentsHomePage(Model a2){
-        a2.addAttribute("studentDto", new StudentDto());
-        a2.addAttribute("students", studentFacade.findAll());
-        a2.addAttribute("groups",groupFacade.findAll());
-
-
+    public String showStudentsHomePage(Model model){
+        model.addAttribute("studentDto", new StudentDto());
+        model.addAttribute("students", studentFacade.findAll());
        return "studentsHome";
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
-    public String save(@ModelAttribute StudentDto studentDto){
+    public String save(@ModelAttribute StudentDto studentDto) {
         studentFacade.save(studentDto);
         return "redirect:/students/";
     }
+        @RequestMapping(value = "/search", method = RequestMethod.POST)
+        public String search(@ModelAttribute StudentDto studentDto, Model  modStud) {
+            StudentDto emptyStudentDto = new StudentDto();
+            modStud.addAttribute("studentDto", emptyStudentDto);
+            List<StudentDto> studentDtos = studentFacade.findAll();
+
+            Stream<StudentDto> studentDtoStream = studentDtos.stream();
+            if (studentDto.getStudentGroupName() != null && !"".equals(studentDto.getStudentGroupName())) {
+                studentDtoStream = studentDtoStream.filter(new Predicate<StudentDto>() {
+                    @Override
+                    public boolean test(StudentDto dto) {
+                        if(dto.getStudentGroupName()==null){
+                            return false;
+                        }
+                        return dto.getStudentGroupName().contains(studentDto.getStudentGroupName());
+                    }
+                });
+            }
+            if (studentDto.getSurname() != null && !"".equals(studentDto.getSurname())) {
+                studentDtoStream = studentDtoStream.filter(new Predicate<StudentDto>() {
+                    @Override
+                    public boolean test(StudentDto dto) {
+                        return dto.getSurname().contains(studentDto.getSurname());
+                    }
+                });
+            }
+            if (studentDto.getName() != null && !"".equals(studentDto.getName())) {
+                studentDtoStream = studentDtoStream.filter(new Predicate<StudentDto>() {
+                    @Override
+                    public boolean test(StudentDto dto) {
+                        return dto.getName().contains(studentDto.getName());
+                    }
+                });
+            }
+
+
+            modStud.addAttribute("students", studentDtoStream.collect(Collectors.toList()));
+            return "studentsHome";
+        }
+
     @RequestMapping(value = "/{id}",method=RequestMethod.GET)
     public String seem(@PathVariable(value = "id") Integer studentId, Model model) {
         model.addAttribute("student", studentFacade.findOne(studentId));

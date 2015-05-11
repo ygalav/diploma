@@ -11,6 +11,8 @@ public interface StudentFacade {
     StudentDto save(StudentDto student);
     List<StudentDto> findAll();
 
+    StudentDto findOne(Integer id);
+
     Student fromDto(StudentDto studentDto);
 
     StudentDto toDto(Student student);

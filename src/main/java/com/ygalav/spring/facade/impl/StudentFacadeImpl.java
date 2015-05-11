@@ -33,6 +33,11 @@ public class StudentFacadeImpl implements StudentFacade {
     public List<StudentDto> findAll() {
         return studentService.findAll().stream().map(this::toDto).collect(Collectors.toList());
     }
+
+    @Override
+    public StudentDto findOne(Integer id){
+        return toDto(studentService.findOne(id));
+    }
     
     @Override
     public Student fromDto(StudentDto studentDto){

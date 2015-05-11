@@ -4,16 +4,7 @@ public class RegistrationDto {
     private Integer id;
     private BookDto book;
     private StudentDto student;
-
-    public RegistrationDto(Integer id, BookDto book, StudentDto student) {
-        this.id = id;
-        this.book=book;
-        this.student=student;
-    }
-
-    public RegistrationDto() {
-    }
-
+    private String returnDate;
 
     public Integer getId() {
         return id;
@@ -39,5 +30,11 @@ public class RegistrationDto {
         this.student = student;
     }
 
+    public String getReturnDate() {
+        return returnDate;
+    }
 
+    public void setReturnDate(String returnDate) {
+        this.returnDate = returnDate;
+    }
 }

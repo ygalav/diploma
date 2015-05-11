@@ -6,7 +6,9 @@
 <html>
 <head>
     <jsp:include page="parts/includes.jsp"/>
-
+    <style>
+        .datepicker{z-index:1151 !important;}
+    </style>
     <title></title>
 </head>
 <body>
@@ -61,14 +63,16 @@
                 <th>Книга</th>
                 <th>Студент</th>
                 <th>Група</th>
+                <th>Дата Здачі</th>
             </tr>
             </thead>
             <tbody>
             <c:forEach items="${registrations}" var="registration">
                 <tr>
                     <td>${registration.book.name}</td>
-                    <td>${registration.student.surname} ${registration.student.name}</td>
+                    <td><a href="/students/${registration.student.id}">${registration.student.surname} ${registration.student.name}</a></td>
                     <td>${registration.student.studentGroupName}</td>
+                    <td>${registration.returnDate}</td>
                 </tr>
             </c:forEach>
             </tbody>
@@ -85,22 +89,6 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                 aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title" id="myModalLabel">Додати реєстрацію </h4>
-                    </div>
-
-                    <div class="modal-body">
-                        <div class="row form-group group-name">
-                            <div class="col-md-4">
-                                <label for="student">Група</label>
-                            </div>
-                            <div class="col-md-8">
-
-                                <form:select id="student" path="student.studentGroupName" class="form-control">
-                                    <c:forEach items="${students}" var="student">
-                                        <form:option value="${student.studentGroupName}" label="${student.studentGroupName}"/>
-                                    </c:forEach>
-                                </form:select>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="modal-body">
@@ -135,42 +123,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="modal-body">
-                        <div class="row form-group book-code">
-                            <div class="col-md-4">
-                                <label for="book">Код книги</label>
-                            </div>
-                            <div class="col-md-8">
-                                <input id="code" name="code" class="form-control">
-                                </input>
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="modal-body">
-                        <div class="row form-group ">
+                        <div class="row form-group book-name">
                             <div class="col-md-4">
-                                <%--@declare id="releasedate"--%><label for="releaseDate">Дата видачі</label>
+                                <label for="book">Дата Здачі</label>
                             </div>
                             <div class="col-md-8">
-                                <input id="releaseDay" name="releaseDay" value="${releaseDay}" class="form-control">
-
-                                </input>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="modal-body">
-                        <div class="row form-group ">
-                            <div class="col-md-4">
-                                    <%--@declare id="returndate"--%><label for="returnDate">Дата видачі</label>
-                            </div>
-                            <div class="col-md-8">
-                                <input id="returnDate" name="return" class="form-control">
-
-
-                                </input>
-
+                                <input name="returnDate" class="datepicker" data-provide="datepicker">
                             </div>
                         </div>
                     </div>

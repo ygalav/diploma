@@ -23,4 +23,9 @@ private RegistrationRepository registrationRepository;
     public Registration save(Registration registration) {
         return registrationRepository.save(registration);
     }
+
+    @Override
+    public List<Registration> findByStudentId(Integer id) {
+        return registrationRepository.findByStudentId(id);
+    }
 }

@@ -25,9 +25,7 @@
     <table class="table table-bordered">
         <thead>
         <tr>
-            <th>Номер</th>
-            <th>Прізвище</th>
-            <th>Ім'я</th>
+            <th>Студент</th>
             <th>Група</th>
             <th>Email</th>
             <th>Номер телефону</th>
@@ -37,9 +35,7 @@
         <tbody>
         <c:forEach items="${students}" var="property">
             <tr>
-                <td>${property.id}</td>
-                <td>${property.surname}</td>
-                <td>${property.name}</td>
+                <td><a href="${property.id}">${property.surname} ${property.name}</a></td>
                 <td>${property.studentGroupName}</td>
                 <td>${property.email}</td>
                 <td>${property.phone}</td>

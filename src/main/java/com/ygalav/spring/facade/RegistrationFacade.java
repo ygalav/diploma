@@ -9,5 +9,6 @@ import java.util.List;
 public interface RegistrationFacade {
     List<RegistrationDto> findAll();
     RegistrationDto save(RegistrationDto registrationDto);
+    List<RegistrationDto> findByStudentId(Integer id);
 
 }

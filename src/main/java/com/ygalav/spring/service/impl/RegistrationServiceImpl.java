@@ -25,6 +25,11 @@ private RegistrationRepository registrationRepository;
     }
 
     @Override
+    public Registration findOne(Integer id) {
+        return registrationRepository.findOne(id);
+    }
+
+    @Override
     public List<Registration> findByStudentId(Integer id) {
         return registrationRepository.findByStudentId(id);
     }

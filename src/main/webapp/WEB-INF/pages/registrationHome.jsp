@@ -63,7 +63,7 @@
                 <th>Книга</th>
                 <th>Студент</th>
                 <th>Група</th>
-                <th>Дата Здачі</th>
+                <th>Запланована дата здачі</th>
             </tr>
             </thead>
             <tbody>
@@ -127,7 +127,7 @@
                     <div class="modal-body">
                         <div class="row form-group book-name">
                             <div class="col-md-4">
-                                <label for="book">Дата Здачі</label>
+                                <label for="book"> Запланована дата здачі</label>
                             </div>
                             <div class="col-md-8">
                                 <input name="returnDate" class="datepicker" data-provide="datepicker">

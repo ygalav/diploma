@@ -14,6 +14,7 @@ public class RegistrationBuilder {
     private Student student;
     private Date releaseDate;
     private Date returnDate;
+    private Date actualReturnDate;
 
     public RegistrationBuilder setId(Integer id) {
         this.id = id;
@@ -40,6 +41,11 @@ public class RegistrationBuilder {
         return this;
     }
 
+    public RegistrationBuilder setActualReturnDate(Date actualReturnDate) {
+        this.actualReturnDate = actualReturnDate;
+        return this;
+    }
+
     public Registration createRegistration() {
         Registration registration = new Registration();
         registration.setId(id);
@@ -47,6 +53,7 @@ public class RegistrationBuilder {
         registration.setStudent(student);
         registration.setReleaseDay(releaseDate);
         registration.setReturnDate(returnDate);
+        registration.setActualReturnDate(actualReturnDate);
         return registration;
 
     }

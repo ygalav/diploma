@@ -23,7 +23,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 @Component
 public class RegistrationFacadeImpl implements RegistrationFacade {
@@ -55,11 +54,24 @@ private BookFacade bookFacade;
     }
 
     @Override
+    public void returnBook(Integer registrationId){
+        Registration registration = registrationService.findOne(registrationId);
+        registration.setActualReturnDate(new Date());
+        registrationService.save(registration);
+    }
+
+
+    @Override
     public List<RegistrationDto> findByStudentId(Integer id) {
         return toDtoList(registrationService.findByStudentId(id));
     }
 
-    private RegistrationDto toDto(Registration  registration){
+    @Override
+    public RegistrationDto findOne(Integer id) {
+        return toDto(registrationService.findOne(id));
+    }
+
+    private RegistrationDto toDto(Registration registration){
         BookDto bookDto=bookFacade.toDto(registration.getBook());
         StudentDto studentDto=studentFacade.toDto(registration.getStudent());
         String returnDate = convertDateToString(registration.getReturnDate());
@@ -68,6 +80,7 @@ private BookFacade bookFacade;
                 .setBook(bookDto)
                 .setReturnDate(returnDate)
                 .setStudent(studentDto)
+                .setActualReturnDate(convertDateToString(registration.getActualReturnDate()))
                 .createRegistrationDto();
     }
 
@@ -88,18 +101,22 @@ private BookFacade bookFacade;
                 .setBook(book)
                 .setStudent(student)
                 .setReturnDate(returnDate)
+                .setActualReturnDate(convertStringToDate(registration.getActualReturnDate()))
                 .createRegistration();
     }
 
     private Date convertStringToDate(String dateString){
         Date date = null;
-        try {
+        if (dateString!=null){
+            try {
             date = DATE_FORMAT.parse(dateString);
         } catch (ParseException e) {
             e.printStackTrace();
-        }
+        }}
         return date;
     }
+
+
 
     private String convertDateToString(Date date){
         if (date == null){

@@ -1,10 +1,22 @@
 package com.ygalav.spring.dto;
 
+import java.util.Date;
+
 public class RegistrationDto {
     private Integer id;
     private BookDto book;
     private StudentDto student;
     private String returnDate;
+    private String actualReturnDate;
+
+    public String getActualReturnDate() {
+        return actualReturnDate;
+    }
+
+    public void setActualReturnDate(String actualReturnDate) {
+        this.actualReturnDate = actualReturnDate;
+    }
+
 
     public Integer getId() {
         return id;

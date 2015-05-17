@@ -9,10 +9,16 @@ public class Registration {
     private Integer id;
     private Date releaseDate;
     private Date returnDate;
+    private Date actualReturnDate;
     @ManyToOne(fetch = FetchType.EAGER)
     private Book book;
     @ManyToOne(fetch = FetchType.EAGER)
     private Student student;
+    public Date getActualReturnDate() {return actualReturnDate;}
+
+    public void setActualReturnDate(Date actualReturnDate) {
+        this.actualReturnDate = actualReturnDate;
+    }
 
     public Integer getId() {
         return id;

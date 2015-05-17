@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -52,6 +53,12 @@ import java.util.stream.Stream;
             return "redirect:/registrations/";
         }
 
+    @RequestMapping("/return/{id}")
+    public String returnBook(@PathVariable Integer id){
+        registrationFacade.returnBook(id);
+        RegistrationDto registration = registrationFacade.findOne(id);
+        return "redirect:/students/" + registration.getStudent().getId();
+    }
 
         @RequestMapping(value = "/search", method = RequestMethod.POST)
         public String search(@ModelAttribute RegistrationDto registrationDto, Model model){

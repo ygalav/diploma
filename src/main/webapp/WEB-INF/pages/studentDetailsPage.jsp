@@ -12,7 +12,7 @@
 </head>
 <body>
     <jsp:include page="parts/navbar.jsp"/>
-
+<div class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="row">
@@ -64,20 +64,26 @@
             <tr>
                 <th>Книга</th>
                 <th>Студент</th>
-                <th>Група</th>
+                <th>Запланована дата здачі</th>
+                <th>Дії</th>
             </tr>
             </thead>
             <tbody>
             <c:forEach items="${studentRegistrations}" var="registration">
-                <tr>
+                <tr id="registration-${registration.id}">
                     <td>${registration.book.name}</td>
                     <td>${registration.student.surname} ${registration.student.name}</td>
-                    <td>${registration.student.studentGroupName}</td>
+                    <td>${registration.returnDate}</td>
+                    <td>
+                        <c:if test="${registration.actualReturnDate eq null}">
+                            <a href="/registrations/return/${registration.id}" class="btn btn-danger">Повернути книжку</a>
+                        </c:if>
+                    </td>
                 </tr>
             </c:forEach>
             </tbody>
         </table>
     </div>
-
+</div>
 </body>
 </html>

@@ -21,7 +21,11 @@
                     <form:label path="studentGroupName">Група</form:label>
                 </div>
                 <div class="col-md-2">
-                    <form:input path="studentGroupName" type="text" class="form-control"/>
+                    <form:select  path="studentGroupName" class="form-control">
+                        <c:forEach items="${students}" var="student">
+                            <form:option value="${studentGroupName}" label="${studentGroupName}"/>
+                        </c:forEach>
+                    </form:select>
                 </div>
                 <div class="col-md-1">
                     <form:label path="surname">Прізвище</form:label>
@@ -106,10 +110,10 @@
                     </div>
                     <div class="row form-group stud-group">
                         <div class="col-md-4">
-                            <label for="group">Група</label>
+                            <label id="groups">Група</label>
                         </div>
                         <div class="col-md-8">
-                            <form:select id="group" path="studentGroupName" class="form-control">
+                            <form:select  path="name" class="form-control">
 
                                 <c:forEach items="${groups}" var="group">
                                     <form:option value="${group.name}" label="${group.name}"/>

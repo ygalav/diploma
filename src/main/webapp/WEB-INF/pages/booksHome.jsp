@@ -36,19 +36,6 @@
 </div>
 
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Пошук книги...">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Знайти</button>
-      </span>
-            </div>
-            <!-- /input-group -->
-        </div>
-        <!-- /.col-lg-6 -->
-    </div>
-
-    <div class="row">
         <div class="col-md-2 col-md-offset-5">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Додати книгу</button>
         </div>

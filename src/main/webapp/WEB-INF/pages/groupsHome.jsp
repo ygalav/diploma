@@ -8,7 +8,7 @@
     <jsp:include page="parts/includes.jsp"/>
 <html>
 <head>
-    <title></title>
+    <title>Групи</title>
 </head>
 <body>
 <jsp:include page="parts/navbar.jsp"/>

@@ -6,7 +6,7 @@
 <html>
 <head>
     <jsp:include page="parts/includes.jsp"/>
-    <title></title>
+    <title>Книги</title>
 </head>
 <body>
 <jsp:include page="parts/navbar.jsp"/>

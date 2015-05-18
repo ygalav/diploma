@@ -34,13 +34,13 @@
             </form:form>
     </div>
 </div>
-
+<div class="greenColor">
     <div class="row">
         <div class="col-md-2 col-md-offset-5">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Додати книгу</button>
         </div>
     </div>
-
+</div>
     <table class="table table-bordered">
         <thead>
         <tr>
@@ -109,6 +109,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Відмінити</button>
                 <button type="submit" class="btn btn-primary">Зберегти книгу</button>
+
             </div>
             </form:form>
         </div>

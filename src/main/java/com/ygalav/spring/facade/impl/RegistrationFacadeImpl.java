@@ -36,7 +36,7 @@ private BookFacade bookFacade;
     private BookService bookService;
     @Autowired
     private StudentService studentService;
-    private static final DateFormat DATE_FORMAT = new SimpleDateFormat("dd/mm/yyyy");
+    private static final DateFormat DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
 
     @Override
     public List<RegistrationDto> findAll() {
@@ -78,6 +78,7 @@ private BookFacade bookFacade;
         return new RegistrationDtoBuilder()
                 .setId(registration.getId())
                 .setBook(bookDto)
+                .setReleaseDate(convertDateToString(registration.getReleaseDate()))
                 .setReturnDate(returnDate)
                 .setStudent(studentDto)
                 .setActualReturnDate(convertDateToString(registration.getActualReturnDate()))
@@ -100,6 +101,7 @@ private BookFacade bookFacade;
                 .setId(registration.getId())
                 .setBook(book)
                 .setStudent(student)
+                .setReleaseDate(convertStringToDate(registration.getReleaseDate()))
                 .setReturnDate(returnDate)
                 .setActualReturnDate(convertStringToDate(registration.getActualReturnDate()))
                 .createRegistration();

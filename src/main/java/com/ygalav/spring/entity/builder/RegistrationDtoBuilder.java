@@ -10,8 +10,16 @@ public class RegistrationDtoBuilder {
     private Integer id;
     private BookDto book;
     private StudentDto student;
+    private String releaseDate;
     private String returnDate;
     private String actualReturnDate;
+
+    public RegistrationDtoBuilder setReleaseDate(String releaseDate) {
+        this.releaseDate = releaseDate;
+        return this;
+    }
+
+
 
     public RegistrationDtoBuilder setId(Integer id) {
         this.id = id;
@@ -44,6 +52,7 @@ public class RegistrationDtoBuilder {
         registrationDto.setId(this.id);
         registrationDto.setBook(this.book);
         registrationDto.setStudent(this.student);
+        registrationDto.setReleaseDate(this.releaseDate);
         registrationDto.setReturnDate(this.returnDate);
         registrationDto.setActualReturnDate(this.actualReturnDate);
         return registrationDto;

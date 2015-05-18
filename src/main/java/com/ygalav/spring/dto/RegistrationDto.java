@@ -6,6 +6,7 @@ public class RegistrationDto {
     private Integer id;
     private BookDto book;
     private StudentDto student;
+    private String releaseDate;
     private String returnDate;
     private String actualReturnDate;
 
@@ -48,5 +49,13 @@ public class RegistrationDto {
 
     public void setReturnDate(String returnDate) {
         this.returnDate = returnDate;
+    }
+
+    public String getReleaseDate() {
+        return releaseDate;
+    }
+
+    public void setReleaseDate(String releaseDate) {
+        this.releaseDate = releaseDate;
     }
 }

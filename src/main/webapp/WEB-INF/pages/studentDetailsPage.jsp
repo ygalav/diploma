@@ -64,6 +64,7 @@
             <tr>
                 <th>Книга</th>
                 <th>Студент</th>
+                <th>Дата видачі</th>
                 <th>Запланована дата здачі</th>
                 <th>Дії</th>
             </tr>
@@ -73,11 +74,15 @@
                 <tr id="registration-${registration.id}">
                     <td>${registration.book.name}</td>
                     <td>${registration.student.surname} ${registration.student.name}</td>
+                    <td>${registration.releaseDate}</td>
                     <td>${registration.returnDate}</td>
                     <td>
-                        <c:if test="${registration.actualReturnDate eq null}">
+                        <c:choose>
+                        <c:when test="${registration.actualReturnDate eq null}">
                             <a href="/registrations/return/${registration.id}" class="btn btn-danger">Повернути книжку</a>
-                        </c:if>
+                        </c:when>
+                        <c:otherwise>${registration.actualReturnDate}</c:otherwise>
+                        </c:choose>
                     </td>
                 </tr>
             </c:forEach>

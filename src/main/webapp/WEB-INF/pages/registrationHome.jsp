@@ -9,7 +9,7 @@
     <style>
         .datepicker{z-index:1151 !important;}
     </style>
-    <title></title>
+    <title>Реєстрації</title>
 </head>
 <body>
 <jsp:include page="parts/navbar.jsp"/>
@@ -63,7 +63,7 @@
                 <th>Книга</th>
                 <th>Студент</th>
                 <th>Група</th>
-                <th>Запланована дата здачі</th>
+                <th>Запланована дата повернення</th>
             </tr>
             </thead>
             <tbody>
@@ -127,7 +127,7 @@
                     <div class="modal-body">
                         <div class="row form-group book-name">
                             <div class="col-md-4">
-                                <label for="book"> Запланована дата здачі</label>
+                                <label for="book"> Запланована дата повернення</label>
                             </div>
                             <div class="col-md-8">
                                 <input name="returnDate" class="datepicker" data-provide="datepicker">
@@ -136,6 +136,7 @@
                     </div>
 
                     <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Відмінити</button>
                         <button type="submit" class="btn btn-primary">Зберегти реєстрацію</button>
                     </div>
                 </div>

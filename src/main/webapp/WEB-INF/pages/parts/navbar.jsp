@@ -26,7 +26,7 @@
                 <li><a href="<c:url value='/groups/'/>">Групи</a></li>
 
                 <li><a href="<c:url value='/students/'/>">Студенти</a></li>
-                <li><a href="<c:url value='/registrations/'/>">Реєстрація</a></li>
+                <li><a href="<c:url value='/registrations/'/>">Реєстрації</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

@@ -48,7 +48,6 @@
             <th>Назва</th>
             <th>Автор</th>
             <th>Код</th>
-            <th>Дії</th>
         </tr>
         </thead>
         <tbody>
@@ -58,7 +57,6 @@
                 <td>${property.name}</td>
                 <td>${property.author}</td>
                 <td>${property.code}</td>
-                <td><span class="btn btn-danger disabled">Видалити</span></td>
             </tr>
         </c:forEach>
         </tbody>

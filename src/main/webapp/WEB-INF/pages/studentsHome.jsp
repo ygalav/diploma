@@ -62,7 +62,6 @@
             <th>Група</th>
             <th>Email</th>
             <th>Номер телефону</th>
-            <th>Дії</th>
         </tr>
         </thead>
         <tbody>
@@ -72,7 +71,6 @@
                 <td>${property.studentGroupName}</td>
                 <td>${property.email}</td>
                 <td>${property.phone}</td>
-                <td><span class="btn btn-danger disabled">Видалити</span></td>
             </tr>
         </c:forEach>
         </tbody>

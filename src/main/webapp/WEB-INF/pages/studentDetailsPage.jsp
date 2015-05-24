@@ -13,50 +13,45 @@
 <body>
     <jsp:include page="parts/navbar.jsp"/>
 <div class="container">
+
     <div class="row">
         <div class="col-md-12">
             <div class="row">
-                <div class="col-md-4">
-                    Імя студента
+                <div class="col-md-2 col-md-offset-4">
+                    Cтудент
                 </div>
-                <div class="col-md-8">
-                    ${student.name}
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    Прізвище студента
-                </div>
-                <div class="col-md-8">
-                    ${student.surname}
+                <div class="col-md-2">
+                    ${student.surname} ${student.name}
                 </div>
             </div>
+
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-2 col-md-offset-4">
                     Група
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-2">
                     ${student.studentGroupName}
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-2 col-md-offset-4">
                     Email
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-2">
                     ${student.email}
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
-                    Номер Телефону
+                <div class="col-md-2 col-md-offset-4">
+                    Номер телефону
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-2">
                     ${student.phone}
                 </div>
             </div>
         </div>
     </div>
+
 
     <div class="studentRegistrations">
         <table class="table table-bordered">
@@ -65,8 +60,8 @@
                 <th>Книга</th>
                 <th>Студент</th>
                 <th>Дата видачі</th>
-                <th>Запланована дата здачі</th>
-                <th>Дії</th>
+                <th>Запланована дата повернення</th>
+                <th>Дата повернення книги</th>
             </tr>
             </thead>
             <tbody>

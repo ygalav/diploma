@@ -30,10 +30,12 @@ import java.util.stream.Stream;
         private StudentFacade studentFacade;
         @Autowired
         private BookFacade bookFacade;
+        @Autowired
+        private GroupFacade groupFacade;
 
 
         @RequestMapping("/")
-        public String showStudentsHomePage(Model model){
+        public String showRegistrationsHomePage(Model model){
             RegistrationDto registrationDto=new RegistrationDto();
             registrationDto.setBook(new BookDto());
             registrationDto.setStudent(new StudentDto());
@@ -42,8 +44,7 @@ import java.util.stream.Stream;
             model.addAttribute("registrations", registrationFacade.findAll());
             model.addAttribute("students",studentFacade.findAll());
             model.addAttribute("books",bookFacade.findAll());
-
-
+            model.addAttribute("groups", groupFacade.findAll());
             return "registrationHome";
         }
 

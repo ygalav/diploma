@@ -22,8 +22,8 @@
                 </div>
                 <div class="col-md-2">
                     <form:select  path="studentGroupName" class="form-control">
-                        <c:forEach items="${students}" var="student">
-                            <form:option value="${studentGroupName}" label="${studentGroupName}"/>
+                        <c:forEach items="${groups}" var="group">
+                            <form:option value="${group.id}" label="${group.name}"/>
                         </c:forEach>
                     </form:select>
                 </div>
@@ -111,12 +111,10 @@
                             <label id="groups">Група</label>
                         </div>
                         <div class="col-md-8">
-                            <form:select  path="name" class="form-control">
-
+                            <form:select  path="studentGroupName" class="form-control">
                                 <c:forEach items="${groups}" var="group">
                                     <form:option value="${group.name}" label="${group.name}"/>
                                 </c:forEach>
-
                             </form:select>
                         </div>
                     </div>

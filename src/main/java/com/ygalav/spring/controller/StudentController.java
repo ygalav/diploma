@@ -30,11 +30,14 @@ public class StudentController {
     private StudentFacade studentFacade;
     @Autowired
     private RegistrationFacade registrationFacade;
+    @Autowired
+    private GroupFacade groupFacade;
 
     @RequestMapping("/")
     public String showStudentsHomePage(Model model){
         model.addAttribute("studentDto", new StudentDto());
         model.addAttribute("students", studentFacade.findAll());
+        model.addAttribute("groups", groupFacade.findAll());
        return "studentsHome";
     }
 

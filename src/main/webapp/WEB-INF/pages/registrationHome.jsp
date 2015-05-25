@@ -23,8 +23,8 @@
                 </div>
                 <div class="col-md-2">
                     <form:select id="student" path="student.studentGroupName" class="form-control">
-                    <c:forEach items="${students}" var="student">
-                        <form:option value="${student.studentGroupName}" label="${student.studentGroupName}"/>
+                    <c:forEach items="${groups}" var="group">
+                        <form:option value="${group.name}" label="${group.name}"/>
                     </c:forEach>
                     </form:select>
                 </div>
@@ -113,9 +113,7 @@
                                 <label for="book">Назва книги</label>
                             </div>
                             <div class="col-md-8">
-
                                 <form:select id="book" path="book.id" class="form-control">
-
                                     <c:forEach items="${books}" var="book">
                                         <form:option value="${book.id}" label="${book.name}"/>
                                     </c:forEach>
